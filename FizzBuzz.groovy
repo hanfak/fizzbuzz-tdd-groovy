@@ -16,13 +16,13 @@ class FizzBuzz {
       num
     }
 
-    def divisible_by( num, divisor ) {
+    def divisible_by( Integer num, Integer divisor ) {
       num % divisor == 0
     }
 }
 
 class NumberLessThanOneException extends Exception {
-  
+
     NumberLessThanOneException(String message) {
         super(message)
     }
