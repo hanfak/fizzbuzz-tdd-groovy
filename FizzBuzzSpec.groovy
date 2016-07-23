@@ -55,4 +55,12 @@ class FizzBuzzSpec extends Specification {
      17 | _
   }
 
+  void 'return fizzbuzz with 15'() {
+      when:
+      def res = fb.check(15)
+
+      then:
+      res == 'fizzbuzz'
+  }
+
 }
