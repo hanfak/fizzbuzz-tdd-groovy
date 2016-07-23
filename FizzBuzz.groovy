@@ -1,10 +1,14 @@
 class FizzBuzz {
 
     def check( Integer num ) {
-      if( num % 3 == 0 ) {
+      if( divisible_by( num, 3 ) ) {
         'fizz'
-      } else if( num % 5 == 0 ) {
+      } else if( divisible_by( num, 5 ) ) {
         'buzz'
       }
+    }
+
+    def divisible_by( num, divisor ) {
+      num % divisor == 0
     }
 }
