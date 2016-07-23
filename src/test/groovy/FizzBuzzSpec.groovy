@@ -1,11 +1,9 @@
-@Grab(group='org.spockframework', module='spock-core', version='0.7-groovy-2.0')
 import spock.lang.*
 
 class FizzBuzzSpec extends Specification {
   def fb = new FizzBuzz()
 
-  @Unroll
-  void 'return fizz with multiple of 3'() {
+  def 'return fizz with multiple of 3'() {
       when:
       String res = fb.check(num)
 
@@ -21,8 +19,7 @@ class FizzBuzzSpec extends Specification {
        27 | _
   }
 
-  @Unroll
-  void 'return buzz with multiple of 5'() {
+  def 'return buzz with multiple of 5'() {
       when:
       String res = fb.check(num)
 
@@ -39,8 +36,7 @@ class FizzBuzzSpec extends Specification {
      9680 | _
   }
 
-  @Unroll
-  void 'return buzz with multiple of 15'() {
+  def 'return buzz with multiple of 15'() {
       when:
       String res = fb.check(num)
 
@@ -55,8 +51,7 @@ class FizzBuzzSpec extends Specification {
      3015 | _
   }
 
-  @Unroll
-  void 'does not return fizz, buzz or fizzbuzz when not 3, 5 or 15'() {
+  def 'does not return fizz, buzz or fizzbuzz when not 3, 5 or 15'() {
     when:
     def res = fb.check(num)
 
@@ -70,8 +65,7 @@ class FizzBuzzSpec extends Specification {
     382 | _
   }
 
-  @Unroll
-  void 'return number when not 3, 5 or 15'() {
+  def 'return number when not 3, 5 or 15'() {
     when:
     def res = fb.check(num)
 
@@ -85,8 +79,8 @@ class FizzBuzzSpec extends Specification {
     382 | _
   }
 
-  @Unroll
-  void 'return exits if any number is less than 1'() {
+
+  def 'return exits if any number is less than 1'() {
     when:
     def res = fb.check(num)
 
@@ -101,6 +95,4 @@ class FizzBuzzSpec extends Specification {
      -5 | _
     -15 | _
   }
-
-
 }

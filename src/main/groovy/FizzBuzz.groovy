@@ -16,7 +16,7 @@ class FizzBuzz {
       num
     }
 
-    def divisible_by( Integer num, Integer divisor ) {
+    def divisible_by( num, divisor ) {
       num % divisor == 0
     }
 }
