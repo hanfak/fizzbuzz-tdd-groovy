@@ -39,14 +39,6 @@ class FizzBuzzSpec extends Specification {
      9680 | _
   }
 
-  void 'return fizzbuzz with 15'() {
-      when:
-      def res = fb.check(15)
-
-      then:
-      res == 'fizzbuzz'
-  }
-
   @Unroll
   void 'return buzz with multiple of 15'() {
       when:
@@ -64,7 +56,7 @@ class FizzBuzzSpec extends Specification {
   }
 
   @Unroll
-  void 'return nothing when not 3 or 5'() {
+  void 'does not return fizz, buzz or fizzbuzz when not 3, 5 or 15'() {
     when:
     def res = fb.check(num)
 
@@ -77,5 +69,20 @@ class FizzBuzzSpec extends Specification {
       1 | _
      17 | _
   }
+
+  @Unroll
+  void 'return nothing when not 3, 5 or 15'() {
+    when:
+    def res = fb.check(num)
+
+    then:
+    res == num
+
+    where:
+    num | _
+      1 | _
+     17 | _
+  }
+
 
 }

@@ -10,6 +10,7 @@ class FizzBuzz {
       if( divisible_by( num, 5 ) ) {
         return 'buzz'
       }
+      num
     }
 
     def divisible_by( num, divisor ) {
