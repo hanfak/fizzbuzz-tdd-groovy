@@ -1,7 +1,7 @@
 To run tests
 
 ```bash
-groovy FizzBuzzSpec.groovy
+gradle build
 ```
 
 First project using groovy and testing using spock.
