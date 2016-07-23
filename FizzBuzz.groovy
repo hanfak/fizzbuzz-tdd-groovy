@@ -1,6 +1,9 @@
 class FizzBuzz {
 
-    def check( Integer num ) {
+    def check( Integer num ) throws NumberLessThanOneException{
+      if( num < 1 ) {
+        throw new NumberLessThanOneException('Input is less than 1')
+      }
       if( divisible_by( num, 15) ) {
         return 'fizzbuzz'
       }
@@ -15,5 +18,11 @@ class FizzBuzz {
 
     def divisible_by( num, divisor ) {
       num % divisor == 0
+    }
+}
+
+class NumberLessThanOneException extends Exception {
+    NumberLessThanOneException(String message) {
+        super(message)
     }
 }

@@ -65,13 +65,13 @@ class FizzBuzzSpec extends Specification {
 
     where:
     num | _
-      0 | _
       1 | _
      17 | _
+    382 | _
   }
 
   @Unroll
-  void 'return nothing when not 3, 5 or 15'() {
+  void 'return number when not 3, 5 or 15'() {
     when:
     def res = fb.check(num)
 
@@ -82,7 +82,32 @@ class FizzBuzzSpec extends Specification {
     num | _
       1 | _
      17 | _
+    382 | _
   }
+
+  void 'return exits if number is less than 1'() {
+      when:
+      def res = fb.check(0)
+
+      then:
+      // final NumberLessThanOneException exception = thrown()
+      def exception = thrown(NumberLessThanOneException)
+      exception.message == 'Input is less than 1'
+  }
+
+  // @Unroll
+  // void 'return exits if number is less than 1'() {
+  //   when:
+  //   def res = fb.check(num)
+  //
+  //   then:
+  //   res == num
+  //
+  //   where:
+  //   num | _
+  //     1 | _
+  //    17 | _
+  // }
 
 
 }
