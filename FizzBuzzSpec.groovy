@@ -69,7 +69,7 @@ class FizzBuzzSpec extends Specification {
     def res = fb.check(num)
 
     then:
-    res != 'fizz' || 'buzz'
+    res != 'fizz' || 'buzz' || 'fizzbuzz'
 
     where:
     num | _
