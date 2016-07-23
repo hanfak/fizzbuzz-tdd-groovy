@@ -44,5 +44,22 @@ class FizzBuzzSpec extends Specification {
       then:
       res == 'buzz'
   }
-  
+
+  @Unroll
+  void 'return buzz with multiple of 5'() {
+      when:
+      String res = fb.check(num)
+
+      then:
+      res == 'buzz'
+
+      where:
+      num | _
+       10 | _
+       25 | _
+      100 | _
+      245 | _
+     9680 | _
+  }
+
 }
