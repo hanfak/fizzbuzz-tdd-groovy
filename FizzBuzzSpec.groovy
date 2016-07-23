@@ -85,29 +85,22 @@ class FizzBuzzSpec extends Specification {
     382 | _
   }
 
-  void 'return exits if number is less than 1'() {
-      when:
-      def res = fb.check(0)
+  @Unroll
+  void 'return exits if any number is less than 1'() {
+    when:
+    def res = fb.check(num)
 
-      then:
-      // final NumberLessThanOneException exception = thrown()
-      def exception = thrown(NumberLessThanOneException)
-      exception.message == 'Input is less than 1'
+    then:
+    def exception = thrown(NumberLessThanOneException)
+    exception.message == 'Input is less than 1'
+
+    where:
+    num | _
+      0 | _
+     -3 | _
+     -5 | _
+    -15 | _
   }
-
-  // @Unroll
-  // void 'return exits if number is less than 1'() {
-  //   when:
-  //   def res = fb.check(num)
-  //
-  //   then:
-  //   res == num
-  //
-  //   where:
-  //   num | _
-  //     1 | _
-  //    17 | _
-  // }
 
 
 }

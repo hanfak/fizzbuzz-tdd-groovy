@@ -22,6 +22,7 @@ class FizzBuzz {
 }
 
 class NumberLessThanOneException extends Exception {
+  
     NumberLessThanOneException(String message) {
         super(message)
     }
