@@ -12,7 +12,7 @@ class FizzBuzzSpec extends Specification {
       res == 'fizz'
   }
 
-  void 'return fizz with 3'() {
+  void 'return nothing when not 3'() {
       when:
       def res = fb.check(1)
 
@@ -21,7 +21,7 @@ class FizzBuzzSpec extends Specification {
   }
 
   @Unroll
-  void 'return fizz with multiple of <num>'() {
+  void 'return fizz with multiple of 3'() {
       when:
       String res = fb.check(num)
 
