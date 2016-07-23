@@ -35,7 +35,14 @@ class FizzBuzzSpec extends Specification {
        12 | _
        27 | _
        45 | _
-
-
   }
+
+  void 'return buzz with 5'() {
+      when:
+      String res = fb.check(5)
+
+      then:
+      res == 'buzz'
+  }
+  
 }
