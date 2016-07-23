@@ -39,12 +39,20 @@ class FizzBuzzSpec extends Specification {
       245 | _
      9680 | _
   }
+
+  @Unroll
   void 'return nothing when not 3 or 5'() {
     when:
-    def res = fb.check(1)
+    def res = fb.check(num)
 
     then:
-    res == null
+    res != 'fizz' || 'buzz'
+
+    where:
+    num | _
+      0 | _
+      1 | _
+     17 | _
   }
 
 }
