@@ -4,22 +4,6 @@ import spock.lang.*
 class FizzBuzzSpec extends Specification {
   def fb = new FizzBuzz()
 
-  void 'return fizz with 3'() {
-      when:
-      def res = fb.check(3)
-
-      then:
-      res == 'fizz'
-  }
-
-  void 'return nothing when not 3'() {
-      when:
-      def res = fb.check(1)
-
-      then:
-      res == null
-  }
-
   @Unroll
   void 'return fizz with multiple of 3'() {
       when:
@@ -30,19 +14,12 @@ class FizzBuzzSpec extends Specification {
 
       where:
       num | _
+        3 | _
         6 | _
         9 | _
        12 | _
        27 | _
        45 | _
-  }
-
-  void 'return buzz with 5'() {
-      when:
-      String res = fb.check(5)
-
-      then:
-      res == 'buzz'
   }
 
   @Unroll
@@ -55,11 +32,19 @@ class FizzBuzzSpec extends Specification {
 
       where:
       num | _
+        5 | _
        10 | _
        25 | _
       100 | _
       245 | _
      9680 | _
+  }
+  void 'return nothing when not 3 or 5'() {
+    when:
+    def res = fb.check(1)
+
+    then:
+    res == null
   }
 
 }
