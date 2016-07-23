@@ -1,8 +1,8 @@
 class FizzBuzz {
 
     def check(Integer num) {
-
-      'fizz'
-
+      if(num == 3){
+        'fizz'
+      }
     }
 }

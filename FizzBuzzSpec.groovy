@@ -12,4 +12,15 @@ class FizzBuzzSpec extends Specification {
       then:
       res == 'fizz'
   }
+
+  void 'return fizz with 3'() {
+      given:
+      def fb = new FizzBuzz()
+
+      when:
+      def res = fb.check(1)
+
+      then:
+      res == null
+  }
 }
